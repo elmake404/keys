@@ -30,7 +30,7 @@ public class Key : MonoBehaviour
     {
         if (_isKeyInPosition)
         {
-            transform.Translate(Vector3.left * _keyFeedSpeed * Time.deltaTime);
+            //transform.Translate(Vector3.left * _keyFeedSpeed * Time.deltaTime);
 
             if (Input.GetMouseButton(0))
             {
