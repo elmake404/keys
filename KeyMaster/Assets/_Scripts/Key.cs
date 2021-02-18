@@ -21,6 +21,7 @@ public class Key : MonoBehaviour
     private void Start()
     {
         transform.position = new Vector3(transform.position.x, Grindstone.Istance.transform.position.y, LocaLinkPosition().z);
+        _billetsList[_numberLink].IsActivation= true;
         _isKeyInPosition = true;
         _startPosKey = transform.position;
     }
@@ -29,6 +30,8 @@ public class Key : MonoBehaviour
     {
         if (_isKeyInPosition)
         {
+            transform.Translate(Vector3.left * _keyFeedSpeed * Time.deltaTime);
+
             if (Input.GetMouseButton(0))
             {
                 transform.Translate(Vector3.left * _keyFeedSpeed * Time.deltaTime);
@@ -42,10 +45,11 @@ public class Key : MonoBehaviour
     private IEnumerator GoToAnotherLink()
     {
         _isKeyInPosition=false;
+        _billetsList[_numberLink].IsActivation = false;
+
         if (_numberLink < _billetsList.Count-1)
         {
             _numberLink++;
-
         }
         else
         {
@@ -73,6 +77,7 @@ public class Key : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
         _isKeyInPosition = true;
+        _billetsList[_numberLink].IsActivation = true;
 
     }
     private Vector3 LocaLinkPosition()

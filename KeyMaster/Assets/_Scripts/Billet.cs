@@ -6,33 +6,54 @@ public class Billet : MonoBehaviour
 {
     private Grindstone _grindstone;
     [SerializeField]
+    private GameObject _MeshBillet;
+    [SerializeField]
     private Key _key;
+    private float _scaleMeshBillet
+    { get { return _MeshBillet.transform.localScale.x * transform.localScale.x; } }
+
+    public bool IsActivation;
 
     private void Start()
     {
         _grindstone = Grindstone.Istance;
     }
-    private void OnTriggerStay(Collider other)
+
+    private void LateUpdate()
     {
-        if (other.gameObject == _grindstone.gameObject)
+        if (IsActivation)
         {
-            Sharpen();
+            if (_grindstone.RegionGrindstone(transform.position.x + _scaleMeshBillet, out float cutSize))
+            {
+                Sharpen(cutSize);
+            }
         }
     }
 
-    private void Sharpen()
+    private void OnTriggerStay(Collider other)
     {
-        if (transform.localScale.x > 0)
-        {
-            Vector3 ScaleBillet = transform.localScale;
+        //if (other.gameObject == _grindstone.gameObject)
+        //{
+        //    Sharpen();
+        //}
+    }
 
-            ScaleBillet.x -= _key.KeyFeedSpeed;
+    private void Sharpen(float sawCutSize)
+    {
+        Vector3 ScaleBillet = transform.localScale;
+
+        ScaleBillet.x -= sawCutSize;
+
+        transform.localScale = ScaleBillet;
+
+        if (transform.localScale.x < 0)
+        {
+            ScaleBillet.x = 0;
 
             transform.localScale = ScaleBillet;
-        }
-        else
-        {
+
             _key.WorkpieceWornOut();
+
         }
     }
 }
