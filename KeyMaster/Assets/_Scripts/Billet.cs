@@ -11,7 +11,7 @@ public class Billet : MonoBehaviour
     private Key _key;
     private float _scaleMeshBillet
     { get { return _MeshBillet.transform.localScale.x * transform.localScale.x; } }
-
+    [HideInInspector]
     public bool IsActivation;
 
     private void Start()
@@ -29,15 +29,6 @@ public class Billet : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        //if (other.gameObject == _grindstone.gameObject)
-        //{
-        //    Sharpen();
-        //}
-    }
-
     private void Sharpen(float sawCutSize)
     {
         Vector3 ScaleBillet = transform.localScale;
