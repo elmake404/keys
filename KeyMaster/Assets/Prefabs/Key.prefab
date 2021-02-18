@@ -50,12 +50,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e968dd11ae4b849833c3f5bf0e038d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _billetsList:
-  - {fileID: 3762345904853632495}
-  - {fileID: 1625533957877546616}
-  - {fileID: 4203649508962819029}
-  - {fileID: 5737547475956139419}
-  - {fileID: 2467825353755278263}
+  _keyTeethList:
+  - {fileID: 418407077602181328}
+  - {fileID: 2844018947876895559}
+  - {fileID: 841801887823421162}
+  - {fileID: 9108301171344310436}
+  - {fileID: 1425258139687042696}
   _keyFeedSpeed: 0.3
   _speedTransitionAnotherLink: 0.1
 --- !u!1 &2491715952536460196
@@ -257,6 +257,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Billet (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
+        type: 3}
+      propertyPath: _key
+      value: 
+      objectReference: {fileID: 4629432331863747995}
     - target: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
         type: 3}
       propertyPath: _key
@@ -317,21 +322,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b773581950e8f429b0a5a32d686cfa, type: 3}
 --- !u!4 &3318716618988028769 stripped
@@ -340,16 +330,16 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 298255212695051907}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2467825353755278263 stripped
+--- !u!114 &1425258139687042696 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
+  m_CorrespondingSourceObject: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
     type: 3}
   m_PrefabInstance: {fileID: 298255212695051907}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838850c321c7c7b4bb15ba4f0aba113e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a5603a3aa1d46944ab231f6afb6f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1308979819972894939
@@ -364,6 +354,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Billet
       objectReference: {fileID: 0}
+    - target: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
+        type: 3}
+      propertyPath: _key
+      value: 
+      objectReference: {fileID: 4629432331863747995}
     - target: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
         type: 3}
       propertyPath: _key
@@ -424,21 +419,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b773581950e8f429b0a5a32d686cfa, type: 3}
 --- !u!4 &4037336954009615673 stripped
@@ -447,16 +427,16 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1308979819972894939}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3762345904853632495 stripped
+--- !u!114 &418407077602181328 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
+  m_CorrespondingSourceObject: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
     type: 3}
   m_PrefabInstance: {fileID: 1308979819972894939}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838850c321c7c7b4bb15ba4f0aba113e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a5603a3aa1d46944ab231f6afb6f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2038647838613225185
@@ -471,6 +451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Billet (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
+        type: 3}
+      propertyPath: _key
+      value: 
+      objectReference: {fileID: 4629432331863747995}
     - target: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
         type: 3}
       propertyPath: _key
@@ -531,21 +516,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b773581950e8f429b0a5a32d686cfa, type: 3}
 --- !u!4 &3920196351807709955 stripped
@@ -554,16 +524,16 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2038647838613225185}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4203649508962819029 stripped
+--- !u!114 &841801887823421162 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
+  m_CorrespondingSourceObject: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
     type: 3}
   m_PrefabInstance: {fileID: 2038647838613225185}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838850c321c7c7b4bb15ba4f0aba113e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a5603a3aa1d46944ab231f6afb6f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3500397629499628364
@@ -578,6 +548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Billet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
+        type: 3}
+      propertyPath: _key
+      value: 
+      objectReference: {fileID: 4629432331863747995}
     - target: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
         type: 3}
       propertyPath: _key
@@ -638,21 +613,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b773581950e8f429b0a5a32d686cfa, type: 3}
 --- !u!4 &1926986206325671598 stripped
@@ -661,16 +621,16 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3500397629499628364}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1625533957877546616 stripped
+--- !u!114 &2844018947876895559 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
+  m_CorrespondingSourceObject: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
     type: 3}
   m_PrefabInstance: {fileID: 3500397629499628364}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838850c321c7c7b4bb15ba4f0aba113e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a5603a3aa1d46944ab231f6afb6f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7602985035425112239
@@ -685,6 +645,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Billet (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
+        type: 3}
+      propertyPath: _key
+      value: 
+      objectReference: {fileID: 4629432331863747995}
     - target: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
         type: 3}
       propertyPath: _key
@@ -745,21 +710,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039347727355829730, guid: a9b773581950e8f429b0a5a32d686cfa,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b773581950e8f429b0a5a32d686cfa, type: 3}
 --- !u!4 &4877068804291607885 stripped
@@ -768,15 +718,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7602985035425112239}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5737547475956139419 stripped
+--- !u!114 &9108301171344310436 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2746324532931454260, guid: a9b773581950e8f429b0a5a32d686cfa,
+  m_CorrespondingSourceObject: {fileID: 1721524267094335499, guid: a9b773581950e8f429b0a5a32d686cfa,
     type: 3}
   m_PrefabInstance: {fileID: 7602985035425112239}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838850c321c7c7b4bb15ba4f0aba113e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a5603a3aa1d46944ab231f6afb6f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

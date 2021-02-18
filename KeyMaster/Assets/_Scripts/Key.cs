@@ -5,7 +5,7 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     [SerializeField]
-    private List<Billet> _billetsList;
+    private List<KeyTeeth> _keyTeethList;
     private Vector3 _startPosKey;
 
 
@@ -21,7 +21,7 @@ public class Key : MonoBehaviour
     private void Start()
     {
         transform.position = new Vector3(transform.position.x, Grindstone.Istance.transform.position.y, LocaLinkPosition().z);
-        _billetsList[_numberLink].IsActivation= true;
+        _keyTeethList[_numberLink].ActivationBillets();
         _isKeyInPosition = true;
         _startPosKey = transform.position;
     }
@@ -36,7 +36,7 @@ public class Key : MonoBehaviour
             {
                 transform.Translate(Vector3.left * _keyFeedSpeed * Time.deltaTime);
             }
-            else if (Input.GetMouseButtonUp(0))
+            else if (Input.GetMouseButtonUp(0) && _keyTeethList[_numberLink].WastedAwaySuperfluous())
             {
                 StartCoroutine(GoToAnotherLink());
             }
@@ -45,9 +45,9 @@ public class Key : MonoBehaviour
     private IEnumerator GoToAnotherLink()
     {
         _isKeyInPosition=false;
-        _billetsList[_numberLink].IsActivation = false;
+        _keyTeethList[_numberLink].DeactivationBillets();
 
-        if (_numberLink < _billetsList.Count-1)
+        if (_numberLink < _keyTeethList.Count-1)
         {
             _numberLink++;
         }
@@ -77,12 +77,12 @@ public class Key : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
         _isKeyInPosition = true;
-        _billetsList[_numberLink].IsActivation = true;
+        _keyTeethList[_numberLink].ActivationBillets();
 
     }
     private Vector3 LocaLinkPosition()
     {
-        return (transform.position - _billetsList[_numberLink].transform.InverseTransformPoint(Grindstone.Istance.transform.position));
+        return (transform.position - _keyTeethList[_numberLink].transform.InverseTransformPoint(Grindstone.Istance.transform.position));
 
     }
     public void WorkpieceWornOut()

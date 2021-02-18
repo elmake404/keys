@@ -6,11 +6,11 @@ public class Billet : MonoBehaviour
 {
     private Grindstone _grindstone;
     [SerializeField]
-    private GameObject _MeshBillet;
+    private Transform _meshBillet;
     [SerializeField]
-    private Key _key;
+    private KeyTeeth _keyTeeth;
     private float _scaleMeshBillet
-    { get { return _MeshBillet.transform.localScale.x * transform.localScale.x; } }
+    { get { return _meshBillet.localScale.x * transform.localScale.x; } }
     [HideInInspector]
     public bool IsActivation;
 
@@ -43,8 +43,7 @@ public class Billet : MonoBehaviour
 
             transform.localScale = ScaleBillet;
 
-            _key.WorkpieceWornOut();
-
+            _keyTeeth.Erased(this);
         }
     }
 }
