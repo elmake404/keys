@@ -6,6 +6,9 @@ public class Grindstone : MonoBehaviour
 {
     public static Grindstone Istance;
 
+    [SerializeField]
+    private ParticleSystem _sparksPS;
+
     private float _regionRight
     { get { return transform.position.x - transform.localScale.x / 2; } }
     private float _regionLeft
@@ -14,7 +17,14 @@ public class Grindstone : MonoBehaviour
     {
         Istance = this;
     }
-
+    public void PlaySparks()
+    {
+        _sparksPS.Play();
+    }
+    public void StopSparks()
+    {
+        _sparksPS.Stop();
+    }
     public bool RegionGrindstone(float PositionX, out float sawCutSize)
     {
         if (transform.position.x - PositionX > 0)

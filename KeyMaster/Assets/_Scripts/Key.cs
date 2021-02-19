@@ -10,10 +10,7 @@ public class Key : MonoBehaviour
 
 
     [SerializeField]
-    private float _keyFeedSpeed;
-    //public float KeyFeedSpeed
-    //{ get { return _keyFeedSpeed * Time.deltaTime; } }
-
+    private float _keyFeedSpeed, _keyFeedSpeedProcessing;
     [SerializeField]
     private float _speedTransitionAnotherLink;
     [SerializeField]
@@ -39,7 +36,7 @@ public class Key : MonoBehaviour
 
             if (Input.GetMouseButton(0))
             {
-                transform.Translate(Vector3.left * _keyFeedSpeed * Time.deltaTime);
+                transform.Translate(Vector3.left * GetSpeed() * Time.deltaTime);
             }
             else if (Input.GetMouseButtonUp(0) /*&& _keyTeethList[_numberLink].WastedAwaySuperfluous()*/)
             {
@@ -106,6 +103,10 @@ public class Key : MonoBehaviour
     {
         return (transform.position - _keyTeethList[_numberLink].transform.InverseTransformPoint(Grindstone.Istance.transform.position));
 
+    }
+    private float GetSpeed()
+    {
+        return _keyTeethList[_numberLink].IsProcessingBillet ? _keyFeedSpeedProcessing : _keyFeedSpeed ;
     }
     public void WorkpieceWornOut()
     {

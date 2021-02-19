@@ -12,7 +12,7 @@ public class Billet : MonoBehaviour
     private float _scaleMeshBillet
     { get { return _meshBillet.localScale.x * transform.localScale.x; } }
     [HideInInspector]
-    public bool IsActivation;
+    public bool IsActivation , IsProcessing;
 
     private void Start()
     {
@@ -25,8 +25,21 @@ public class Billet : MonoBehaviour
         {
             if (_grindstone.RegionGrindstone(transform.position.x + _scaleMeshBillet, out float cutSize))
             {
-                Debug.Log(1);
+                if (!IsProcessing)
+                {
+                    IsProcessing = true;
+                    _grindstone.PlaySparks();
+
+                }
                 Sharpen(cutSize);
+            }
+            else
+            {
+                if (IsProcessing)
+                {
+                    _grindstone.StopSparks();
+                    IsProcessing = false;
+                }
             }
         }
     }
