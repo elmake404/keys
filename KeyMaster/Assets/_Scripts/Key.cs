@@ -10,16 +10,21 @@ public class Key : MonoBehaviour
 
 
     [SerializeField]
-    private float _keyFeedSpeed; public float KeyFeedSpeed
-    { get { return _keyFeedSpeed * Time.deltaTime; } }
+    private float _keyFeedSpeed;
+    //public float KeyFeedSpeed
+    //{ get { return _keyFeedSpeed * Time.deltaTime; } }
 
     [SerializeField]
     private float _speedTransitionAnotherLink;
+    [SerializeField]
+    [Range(0,0.9f)]
+    private float _minDifferenceBetweenTeeth;
     private int _numberLink = 0;
     private bool _isKeyInPosition;
 
     private void Start()
     {
+        SettingTheSizeOfTheTeeth();
         transform.position = new Vector3(transform.position.x, Grindstone.Istance.transform.position.y, LocaLinkPosition().z);
         _keyTeethList[_numberLink].ActivationBillets();
         _isKeyInPosition = true;
@@ -36,7 +41,7 @@ public class Key : MonoBehaviour
             {
                 transform.Translate(Vector3.left * _keyFeedSpeed * Time.deltaTime);
             }
-            else if (Input.GetMouseButtonUp(0) && _keyTeethList[_numberLink].WastedAwaySuperfluous())
+            else if (Input.GetMouseButtonUp(0) /*&& _keyTeethList[_numberLink].WastedAwaySuperfluous()*/)
             {
                 StartCoroutine(GoToAnotherLink());
             }
@@ -44,16 +49,16 @@ public class Key : MonoBehaviour
     }
     private IEnumerator GoToAnotherLink()
     {
-        _isKeyInPosition=false;
+        _isKeyInPosition = false;
         _keyTeethList[_numberLink].DeactivationBillets();
 
-        if (_numberLink < _keyTeethList.Count-1)
+        if (_numberLink < _keyTeethList.Count - 1)
         {
             _numberLink++;
         }
         else
         {
-          yield return null;
+            yield return null;
         }
 
         Vector3 PosLink = transform.position;
@@ -79,6 +84,23 @@ public class Key : MonoBehaviour
         _isKeyInPosition = true;
         _keyTeethList[_numberLink].ActivationBillets();
 
+    }
+    private void SettingTheSizeOfTheTeeth()
+    {
+        float SizeOldTeeth = 1;
+        for (int i = 0; i < _keyTeethList.Count; i++)
+        {
+            while (true)
+            {
+                float SizeTeeth = Random.Range(0.2f, 1.8f);
+                if (Mathf.Abs(SizeOldTeeth - SizeTeeth) > _minDifferenceBetweenTeeth)
+                {
+                    SizeOldTeeth = SizeTeeth;
+                    break;
+                }
+            }
+            _keyTeethList[i].ProngParameters(SizeOldTeeth);
+        }
     }
     private Vector3 LocaLinkPosition()
     {

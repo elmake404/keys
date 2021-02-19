@@ -56,8 +56,9 @@ MonoBehaviour:
   - {fileID: 841801887823421162}
   - {fileID: 9108301171344310436}
   - {fileID: 1425258139687042696}
-  _keyFeedSpeed: 0.3
+  _keyFeedSpeed: 1
   _speedTransitionAnotherLink: 0.1
+  _minDifferenceBetweenTeeth: 0.5
 --- !u!1 &2491715952536460196
 GameObject:
   m_ObjectHideFlags: 0

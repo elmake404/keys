@@ -25,6 +25,7 @@ public class Billet : MonoBehaviour
         {
             if (_grindstone.RegionGrindstone(transform.position.x + _scaleMeshBillet, out float cutSize))
             {
+                Debug.Log(1);
                 Sharpen(cutSize);
             }
         }

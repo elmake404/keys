@@ -7,8 +7,15 @@ public class KeyTeeth : MonoBehaviour
     [SerializeField]
     private Billet _billetSuperfluous, _billet;
     [SerializeField]
-    private Key _key;
+    private Key _key;    
 
+    public void ProngParameters(float sizeBilletSuperfluous)
+    {
+        float sizeBillet = (_billetSuperfluous.transform.localScale.x + _billet.transform.localScale.x) - sizeBilletSuperfluous;
+        _billet.transform.localScale = new Vector3(sizeBillet, _billet.transform.localScale.y, _billet.transform.localScale.z);
+        _billetSuperfluous.transform.localScale = new Vector3(sizeBilletSuperfluous, _billetSuperfluous.transform.localScale.y, _billetSuperfluous.transform.localScale.z);
+        _billetSuperfluous.transform.localPosition = new Vector3(-sizeBillet, _billetSuperfluous.transform.localPosition.y, _billetSuperfluous.transform.localPosition.z);
+    }
     public void ActivationBillets()
     {
         _billetSuperfluous.IsActivation = true;
@@ -34,4 +41,5 @@ public class KeyTeeth : MonoBehaviour
     {
         return _billetSuperfluous.transform.localScale.x <= 0;
     }
+
 }
