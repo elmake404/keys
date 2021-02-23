@@ -8,6 +8,11 @@ public class Grindstone : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem _sparksPS;
+    [SerializeField]
+    private Transform _grindstoneMesh;
+
+    [SerializeField]
+    private float _speedRotation;
 
     private float _regionRight
     { get { return transform.position.x - transform.localScale.x / 2; } }
@@ -16,6 +21,15 @@ public class Grindstone : MonoBehaviour
     private void Awake()
     {
         Istance = this;
+        StartCoroutine(RotationGrindstone());
+    }
+    private IEnumerator RotationGrindstone()
+    {
+        while (true)
+        {
+            _grindstoneMesh.Rotate(Vector3.forward * _speedRotation);
+            yield return new WaitForSeconds(0.02f);
+        }
     }
     public void PlaySparks()
     {

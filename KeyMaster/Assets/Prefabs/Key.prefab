@@ -51,13 +51,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyTeethList:
-  - {fileID: 418407077602181328}
-  - {fileID: 2844018947876895559}
-  - {fileID: 841801887823421162}
-  - {fileID: 9108301171344310436}
   - {fileID: 1425258139687042696}
-  _keyFeedSpeed: 1
-  _keyFeedSpeedProcessing: 0.5
+  - {fileID: 9108301171344310436}
+  - {fileID: 841801887823421162}
+  - {fileID: 2844018947876895559}
+  - {fileID: 418407077602181328}
+  _keyFeedSpeed: 2
+  _keyFeedSpeedProcessing: 1
   _speedTransitionAnotherLink: 0.1
   _minDifferenceBetweenTeeth: 0.5
 --- !u!1 &2491715952536460196
