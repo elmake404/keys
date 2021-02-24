@@ -11,10 +11,11 @@ public class KeyTeeth : MonoBehaviour
 
     public bool IsProcessingBillet 
     { get { return _billet.IsProcessing || _billetSuperfluous.IsProcessing; } }
-    public void ProngParameters(float sizeBilletSuperfluous)
+    public void ProngParameters(float sizeBilletSuperfluous,float sizeTeeht)
     {
-        float sizeBillet = (_billetSuperfluous.transform.localScale.x + _billet.transform.localScale.x) - sizeBilletSuperfluous;
-
+        sizeTeeht = sizeTeeht <= 0 ? 1 : sizeTeeht;
+        float sizeBillet = ((_billetSuperfluous.transform.localScale.x + _billet.transform.localScale.x) - sizeBilletSuperfluous)*sizeTeeht;
+        sizeBilletSuperfluous *= sizeTeeht;
         _billet.transform.localScale = new Vector3(sizeBillet, _billet.transform.localScale.y, _billet.transform.localScale.z);
         _billetSuperfluous.transform.localScale = new Vector3(sizeBilletSuperfluous, _billetSuperfluous.transform.localScale.y, _billetSuperfluous.transform.localScale.z);
         _billetSuperfluous.transform.localPosition = new Vector3(-sizeBillet, _billetSuperfluous.transform.localPosition.y, _billetSuperfluous.transform.localPosition.z);

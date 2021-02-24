@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Conveyor : MonoBehaviour
 {
+    [System.Serializable]
+    private struct KeyCharacteristics
+    {
+        public int NaberTeeht;
+        [Range(0.1f, 1f)]
+        public float SizeTeeth;
+    }
+    [SerializeField]
+    private KeyCharacteristics [] _quantityKeys;
+
     private Key[] _keys;
     [SerializeField]
     private Key _keyPrefab;
 
     private int _namberKey;
-    [SerializeField]
-    private int _quantityKeys;
     [SerializeField]
     private float _speedTransitionAnotherLink, _distanceBetweenKeys;
 
@@ -57,12 +65,14 @@ public class Conveyor : MonoBehaviour
     }
     private void SpawnKey()
     {
-        _keys = new Key[_quantityKeys];
+        _keys = new Key[_quantityKeys.Length];
+
         Vector3 spawnPosition = transform.position;
+
         for (int i = 0; i < _keys.Length; i++)
         {
             _keys[i] = Instantiate(_keyPrefab,spawnPosition,transform.rotation);
-            _keys[i].Initialization(this);
+            _keys[i].Initialization(this, _quantityKeys[i].NaberTeeht, _quantityKeys[i].SizeTeeth);
             _keys[i].transform.SetParent(transform);
             spawnPosition.z += _distanceBetweenKeys;
         }

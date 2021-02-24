@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240352657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.42, z: 0}
+  m_LocalPosition: {x: 0, y: -3.58, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -420,9 +420,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6b734fb207e074ca500d6425cd9f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _quantityKeys:
+  - NaberTeeht: 5
+    SizeTeeth: 1
+  - NaberTeeht: 6
+    SizeTeeth: 0.5
+  - NaberTeeht: 8
+    SizeTeeth: 0.7
+  - NaberTeeht: 5
+    SizeTeeth: 0.3
   _keyPrefab: {fileID: 4629432331863747995, guid: 944ff55bab69e3f4e83ed353f684b065,
     type: 3}
-  _quantityKeys: 5
   _speedTransitionAnotherLink: 0.1
   _distanceBetweenKeys: 23
 --- !u!4 &1525933972
@@ -5481,6 +5489,31 @@ PrefabInstance:
     - target: {fileID: 4299691902366780029, guid: bdf4b648952c8574a880e23f7e0f8a56,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299691902366780031, guid: bdf4b648952c8574a880e23f7e0f8a56,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036662340311422310, guid: bdf4b648952c8574a880e23f7e0f8a56,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036662340311422310, guid: bdf4b648952c8574a880e23f7e0f8a56,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036662340311422310, guid: bdf4b648952c8574a880e23f7e0f8a56,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788775764448466712, guid: bdf4b648952c8574a880e23f7e0f8a56,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

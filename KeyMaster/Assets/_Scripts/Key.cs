@@ -71,7 +71,7 @@ public class Key : MonoBehaviour
     //    _isKeyInPosition = true;
     //    _keyTeethList[_numberLink].ActivationBillets();
     //}
-    private void SettingTheSizeOfTheTeeth()
+    private void SettingTheSizeOfTheTeeth(float SizeTeeht)
     {
         float SizeOldTeeth = 1;
         for (int i = 0; i < _keyTeethList.Count; i++)
@@ -85,18 +85,28 @@ public class Key : MonoBehaviour
                     break;
                 }
             }
-            _keyTeethList[i].ProngParameters(SizeOldTeeth);
+            _keyTeethList[i].ProngParameters(SizeOldTeeth, SizeTeeht);
         }
     }
     private float GetSpeed()
     {
         return _keyTeethList[_numberLink].IsProcessingBillet ? _keyFeedSpeedProcessing : _keyFeedSpeed ;
     }
-    public void Initialization(Conveyor conveyor)
+    public void Initialization(Conveyor conveyor,int namberTeeht,float size)
     {
         _conveyor = conveyor;
-        SettingTheSizeOfTheTeeth();
+        SettingTheSizeOfTheTeeth(size);
         _startPosKey = transform.position;
+        namberTeeht = namberTeeht <= 0 ? 5 : namberTeeht;
+        namberTeeht = namberTeeht >= _keyTeethList.Count ? _keyTeethList.Count - 1 : namberTeeht;
+
+        int numberOfUnclaimedTeeth = _keyTeethList.Count - namberTeeht;
+        for (int i = 0; i < numberOfUnclaimedTeeth; i++)
+        {
+            _keyTeethList[i].enabled = false;
+            _keyTeethList[i].transform.parent.gameObject.SetActive(false);
+        }
+        _numberLink = numberOfUnclaimedTeeth;
     }
     public bool GetStartPosKey(float speed)
     {
