@@ -11,7 +11,6 @@ public class KeyTeeth : MonoBehaviour
 
     public bool IsProcessingBillet 
     { get { return _billet.IsProcessing || _billetSuperfluous.IsProcessing; } }
-
     public void ProngParameters(float sizeBilletSuperfluous)
     {
         float sizeBillet = (_billetSuperfluous.transform.localScale.x + _billet.transform.localScale.x) - sizeBilletSuperfluous;
