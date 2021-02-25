@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct KeyCharacteristics
+{
+    public int NaberTeeht;
+    [Range(0.1f, 1f)]
+    public float SizeTeeth;
+}
+
 public class Conveyor : MonoBehaviour
 {
-    [System.Serializable]
-    private struct KeyCharacteristics
-    {
-        public int NaberTeeht;
-        [Range(0.1f, 1f)]
-        public float SizeTeeth;
-    }
     [SerializeField]
     private KeyCharacteristics [] _quantityKeys;
 
@@ -20,10 +21,12 @@ public class Conveyor : MonoBehaviour
 
     private int _namberKey;
     [SerializeField]
-    private float _speedTransitionAnotherLink, _distanceBetweenKeys;
+    private float _speedTransitionAnotherLink, _speedTransitionAnotherKey, _distanceBetweenKeys;
+    private bool _isNewKey;
 
     private void Start()
     {
+        //_quantityKeys = LevelCharacteristicsManager.LevelKeyCharacteristics[0].keyCharacteristics.ToArray();
         SpawnKey();
     }
     private IEnumerator GoToAnotherLink()
@@ -36,15 +39,18 @@ public class Conveyor : MonoBehaviour
             if (_keys[_namberKey].GetStartPosKey(_speedTransitionAnotherLink))
             {
                 PosLink.z = LocaLinkPosition().z;
-                transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherLink);
+                if(!_isNewKey) transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherLink);
+                else transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherKey);
+
                 if (Mathf.Abs(transform.position.z - LocaLinkPosition().z)<0.01)
                 {
+                    _isNewKey = false;
+
                     break;
                 }
             }
             yield return new WaitForSeconds(0.02f);
         }
-
         _keys[_namberKey].ActivationNewTeeth();
     }
     private Vector3 LocaLinkPosition()
@@ -56,7 +62,7 @@ public class Conveyor : MonoBehaviour
         if (_namberKey<_keys.Length-1)
         {
             _namberKey++;
-
+            _isNewKey = true;
         }
         else
         {
