@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public struct KeyCharacteristics
 {
+    public int ModelNamber;
     public int NaberTeeht;
     [Range(0.1f, 1f)]
     public float SizeTeeth;
@@ -12,8 +13,8 @@ public struct KeyCharacteristics
 
 public class Conveyor : MonoBehaviour
 {
-    [SerializeField]
-    private KeyCharacteristics [] _quantityKeys;
+    //[SerializeField]
+    private KeyCharacteristics[] _quantityKeys;
 
     private Key[] _keys;
     [SerializeField]
@@ -26,7 +27,7 @@ public class Conveyor : MonoBehaviour
 
     private void Start()
     {
-        //_quantityKeys = LevelCharacteristicsManager.LevelKeyCharacteristics[0].keyCharacteristics.ToArray();
+        _quantityKeys = LevelCharacteristicsManager.LevelKeyCharacteristics[0].keyCharacteristics.ToArray();
         SpawnKey();
     }
     private IEnumerator GoToAnotherLink()
@@ -39,10 +40,10 @@ public class Conveyor : MonoBehaviour
             if (_keys[_namberKey].GetStartPosKey(_speedTransitionAnotherLink))
             {
                 PosLink.z = LocaLinkPosition().z;
-                if(!_isNewKey) transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherLink);
+                if (!_isNewKey) transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherLink);
                 else transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherKey);
 
-                if (Mathf.Abs(transform.position.z - LocaLinkPosition().z)<0.01)
+                if (Mathf.Abs(transform.position.z - LocaLinkPosition().z) < 0.01)
                 {
                     _isNewKey = false;
 
@@ -59,7 +60,7 @@ public class Conveyor : MonoBehaviour
     }
     public void NextKey()
     {
-        if (_namberKey<_keys.Length-1)
+        if (_namberKey < _keys.Length - 1)
         {
             _namberKey++;
             _isNewKey = true;
@@ -77,8 +78,8 @@ public class Conveyor : MonoBehaviour
 
         for (int i = 0; i < _keys.Length; i++)
         {
-            _keys[i] = Instantiate(_keyPrefab,spawnPosition,transform.rotation);
-            _keys[i].Initialization(this, _quantityKeys[i].NaberTeeht, _quantityKeys[i].SizeTeeth);
+            _keys[i] = Instantiate(_keyPrefab, spawnPosition, transform.rotation);
+            _keys[i].Initialization(this, _quantityKeys[i].NaberTeeht, _quantityKeys[i].SizeTeeth, _quantityKeys[i].ModelNamber);
             _keys[i].transform.SetParent(transform);
             spawnPosition.z += _distanceBetweenKeys;
         }

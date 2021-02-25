@@ -6,6 +6,8 @@ public class Key : MonoBehaviour
 {
     [SerializeField]
     private List<KeyTeeth> _keyTeethList;
+    [SerializeField]
+    private GameObject[] _keyModel;
     private Vector3 _startPosKey;
     private Conveyor _conveyor;
 
@@ -13,10 +15,10 @@ public class Key : MonoBehaviour
     [SerializeField]
     private float _keyFeedSpeed, _keyFeedSpeedProcessing;
     [SerializeField]
-    [Range(0,0.9f)]
+    [Range(0, 0.9f)]
     private float _minDifferenceBetweenTeeth;
     private int _numberLink = 0;
-    private bool _isKeyInPosition,_nextKey;
+    private bool _isKeyInPosition, _nextKey;
 
     private void Update()
     {
@@ -34,43 +36,6 @@ public class Key : MonoBehaviour
             }
         }
     }
-    //private IEnumerator GoToAnotherLink()
-    //{
-    //    _isKeyInPosition = false;
-    //    _keyTeethList[_numberLink].DeactivationBillets();
-
-    //    if (_numberLink < _keyTeethList.Count - 1)
-    //    {
-    //        _numberLink++;
-    //    }
-    //    else
-    //    {
-    //        yield return null;
-    //    }
-
-    //    Vector3 PosLink = transform.position;
-
-    //    while (true)
-    //    {
-    //        if (transform.position.x != _startPosKey.x)
-    //        {
-    //            PosLink.x = _startPosKey.x;
-    //        }
-    //        //else if (transform.position.z != LocaLinkPosition().z)
-    //        //{
-    //        //    PosLink.z = LocaLinkPosition().z;
-    //        //}
-    //        else
-    //        {
-    //            break;
-    //        }
-
-    //        transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherLink);
-    //        yield return new WaitForSeconds(0.02f);
-    //    }
-    //    _isKeyInPosition = true;
-    //    _keyTeethList[_numberLink].ActivationBillets();
-    //}
     private void SettingTheSizeOfTheTeeth(float SizeTeeht)
     {
         float SizeOldTeeth = 1;
@@ -90,17 +55,23 @@ public class Key : MonoBehaviour
     }
     private float GetSpeed()
     {
-        return _keyTeethList[_numberLink].IsProcessingBillet ? _keyFeedSpeedProcessing : _keyFeedSpeed ;
+        return _keyTeethList[_numberLink].IsProcessingBillet ? _keyFeedSpeedProcessing : _keyFeedSpeed;
     }
-    public void Initialization(Conveyor conveyor,int namberTeeht,float size)
+    public void Initialization(Conveyor conveyor, int numberTeeht, float size, int numberModel)
     {
+        if (numberModel < 0 || numberModel > _keyModel.Length - 1)
+        {
+            numberModel = 1;
+        }
+
         _conveyor = conveyor;
         SettingTheSizeOfTheTeeth(size);
         _startPosKey = transform.position;
-        namberTeeht = namberTeeht <= 0 ? 5 : namberTeeht;
-        namberTeeht = namberTeeht >= _keyTeethList.Count ? _keyTeethList.Count - 1 : namberTeeht;
+        _keyModel[numberModel].SetActive(true);
+        numberTeeht = numberTeeht <= 0 ? 5 : numberTeeht;
+        numberTeeht = numberTeeht >= _keyTeethList.Count ? _keyTeethList.Count - 1 : numberTeeht;
 
-        int numberOfUnclaimedTeeth = _keyTeethList.Count - namberTeeht;
+        int numberOfUnclaimedTeeth = _keyTeethList.Count - numberTeeht;
         for (int i = 0; i < numberOfUnclaimedTeeth; i++)
         {
             _keyTeethList[i].enabled = false;
@@ -121,7 +92,7 @@ public class Key : MonoBehaviour
         {
             if (_nextKey)
                 _conveyor.NextKey();
-                return true;
+            return true;
         }
 
     }
