@@ -7,7 +7,7 @@ public struct KeyCharacteristics
 {
     public int ModelNamber;
     public int NaberTeeht;
-    [Range(0.1f, 1f)]
+    [Range(0.5f, 1f)]
     public float SizeTeeth;
 }
 

@@ -27,6 +27,8 @@ public class KeyTeeth : MonoBehaviour
     }
     public void DeactivationBillets()
     {
+        CanvasManager.instanceСanvasManager.AddPoint
+            (_billetSuperfluous.transform.localScale.x, _billet.GetDistance(),_billetSuperfluous.GetDistance()==0); 
         _billetSuperfluous.IsActivation = false;
         _billet.IsActivation = false;
 
@@ -34,7 +36,9 @@ public class KeyTeeth : MonoBehaviour
         _billet.IsProcessing = false;
 
         Grindstone.Istance.StopSparks();
-    }
+        //событие 
+            }
+
     public void Erased(Billet billet)
     {
         if (billet == _billetSuperfluous)

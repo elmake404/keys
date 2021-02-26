@@ -11,12 +11,14 @@ public class Billet : MonoBehaviour
     private KeyTeeth _keyTeeth;
     private float _scaleMeshBillet
     { get { return _meshBillet.localScale.x * transform.localScale.x; } }
+    private float _startScale;
     [HideInInspector]
     public bool IsActivation , IsProcessing;
 
     private void Start()
     {
         _grindstone = Grindstone.Istance;
+        _startScale = transform.localScale.x;
     }
 
     private void LateUpdate()
@@ -59,5 +61,9 @@ public class Billet : MonoBehaviour
 
             _keyTeeth.Erased(this);
         }
+    }
+    public float GetDistance()
+    {
+        return _startScale - transform.localScale.x;
     }
 }
