@@ -235,7 +235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1777170646809218, guid: 0a5977a41716af548a57df5683b8ff56, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224686921106952662, guid: 0a5977a41716af548a57df5683b8ff56,
         type: 3}
@@ -275,7 +275,7 @@ PrefabInstance:
     - target: {fileID: 224686921106952662, guid: 0a5977a41716af548a57df5683b8ff56,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224686921106952662, guid: 0a5977a41716af548a57df5683b8ff56,
         type: 3}
@@ -519,7 +519,7 @@ Transform:
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1525933970
 GameObject:
@@ -5322,72 +5322,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1967902088
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1967902090}
-  - component: {fileID: 1967902089}
-  m_Layer: 0
-  m_Name: LevelCharacteristics
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1967902089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967902088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a82a83bec083f34287f18c9ee658703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _perfect: 0.075
-  _fine: 0.2
-  _perfectAddPoint: 100
-  _fineAddPoint: 75
-  _badlyAddPoint: 50
-  _bonusPoints: 50
-  _levelKeyCharacteristics:
-  - keyCharacteristics:
-    - ModelNamber: 0
-      NaberTeeht: 5
-      SizeTeeth: 1
-    - ModelNamber: 0
-      NaberTeeht: 3
-      SizeTeeth: 0.8
-    - ModelNamber: 0
-      NaberTeeht: 2
-      SizeTeeth: 0.1
-  - keyCharacteristics: []
-  - keyCharacteristics: []
-  - keyCharacteristics: []
-  - keyCharacteristics: []
-  - keyCharacteristics: []
-  - keyCharacteristics: []
---- !u!4 &1967902090
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967902088}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7542915, y: 3.2669048, z: 1.8272305}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4299691902467789118
 PrefabInstance:

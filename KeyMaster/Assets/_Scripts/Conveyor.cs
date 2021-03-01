@@ -27,33 +27,58 @@ public class Conveyor : MonoBehaviour
 
     private void Start()
     {
-        _quantityKeys = LevelCharacteristicsManager.LevelKeyCharacteristics[0].keyCharacteristics.ToArray();
+        if (PlayerPrefs.GetInt("Stage") < 0 || LevelCharacteristicsManager.LevelKeyCharacteristics.Count <= PlayerPrefs.GetInt("Stage"))
+        {
+            PlayerPrefs.SetInt("Stage", 0);
+        }
+
+        _quantityKeys = LevelCharacteristicsManager.LevelKeyCharacteristics[PlayerPrefs.GetInt("Stage")].keyCharacteristics.ToArray();
         SpawnKey();
     }
     private IEnumerator GoToAnotherLink()
     {
-        _keys[_namberKey].DeactivationOldTeeth();
-        Vector3 PosLink = transform.position;
-
-        while (true)
+        if (!_keys[_namberKey].LinkInWork().NoSawCut())
         {
-            if (_keys[_namberKey].GetStartPosKey(_speedTransitionAnotherLink))
+            _keys[_namberKey].DeactivationOldTeeth();
+            Vector3 PosLink = transform.position;
+
+            while (true)
             {
-                PosLink.z = LocaLinkPosition().z;
-                if (!_isNewKey) transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherLink);
-                else transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherKey);
-
-                if (Mathf.Abs(transform.position.z - LocaLinkPosition().z) < 0.01)
+                if (_keys[_namberKey].KeyAtStartPosition())
                 {
-                    _isNewKey = false;
+                    PosLink.z = LocaLinkPosition().z;
+                    if (!_isNewKey) transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherLink);
+                    else transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherKey);
 
-                    break;
+                    if (Mathf.Abs(transform.position.z - LocaLinkPosition().z) < 0.01)
+                    {
+                        _isNewKey = false;
+
+                        break;
+                    }
                 }
+                else
+                {
+                    _keys[_namberKey].MoveToStart(_speedTransitionAnotherLink);
+                }
+                yield return new WaitForSeconds(0.02f);
             }
-            yield return new WaitForSeconds(0.02f);
+            _keys[_namberKey].ActivationNewTeeth();
+
         }
-        _keys[_namberKey].ActivationNewTeeth();
+        else
+        {
+
+            while (!_keys[_namberKey].KeyAtStartPosition())
+            {
+                _keys[_namberKey].MoveToStart(_speedTransitionAnotherLink);
+
+                yield return new WaitForSeconds(0.02f);
+            }
+            _isNewKey = false;
+        }
     }
+
     private Vector3 LocaLinkPosition()
     {
         return (transform.position - _keys[_namberKey].LinkInWork().transform.InverseTransformPoint(Grindstone.Istance.transform.position));
@@ -67,7 +92,7 @@ public class Conveyor : MonoBehaviour
         }
         else
         {
-            Debug.Log("Game Win");
+            CanvasManager.IsWinGame = true;
         }
     }
     private void SpawnKey()

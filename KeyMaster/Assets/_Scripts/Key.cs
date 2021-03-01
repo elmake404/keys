@@ -18,21 +18,29 @@ public class Key : MonoBehaviour
     [Range(0, 0.9f)]
     private float _minDifferenceBetweenTeeth;
     private int _numberLink = 0;
-    private bool _isKeyInPosition, _nextKey;
+    private bool _isKeyInPosition, _nextKey, _isReady;
 
     private void Update()
     {
-        if (_isKeyInPosition)
+        if (CanvasManager.IsGameFlow)
         {
-            //transform.Translate(Vector3.left * _keyFeedSpeed * Time.deltaTime);
-
-            if (Input.GetMouseButton(0))
+            if (_isKeyInPosition && _isReady)
             {
-                transform.Translate(Vector3.left * GetSpeed() * Time.deltaTime);
+                if (Input.GetMouseButton(0))
+                {
+                    transform.Translate(Vector3.left * GetSpeed() * Time.deltaTime);
+                }
+                else if (Input.GetMouseButtonUp(0) /*&& _keyTeethList[_numberLink].WastedAwaySuperfluous()*/)
+                {
+                    _conveyor.WorkpieceChange();
+                }
             }
-            else if (Input.GetMouseButtonUp(0) /*&& _keyTeethList[_numberLink].WastedAwaySuperfluous()*/)
+            else
             {
-                _conveyor.WorkpieceChange();
+                if (Input.GetMouseButtonUp(0))
+                {
+                    _isReady = true;
+                }
             }
         }
     }
@@ -79,21 +87,26 @@ public class Key : MonoBehaviour
         }
         _numberLink = numberOfUnclaimedTeeth;
     }
-    public bool GetStartPosKey(float speed)
+    public bool KeyAtStartPosition()
     {
-        Vector3 PosLink = transform.position;
         if (Mathf.Abs(transform.position.x - _startPosKey.x) >= 0.01f)
         {
-            PosLink.x = _startPosKey.x;
-            transform.position = Vector3.MoveTowards(transform.position, PosLink, speed);
             return false;
         }
         else
         {
             if (_nextKey)
                 _conveyor.NextKey();
+
             return true;
         }
+
+    }
+    public void MoveToStart(float speed)
+    {
+        Vector3 PosLink = transform.position;
+        PosLink.x = _startPosKey.x;
+        transform.position = Vector3.MoveTowards(transform.position, PosLink, speed);
 
     }
     public void ActivationKey()

@@ -13,8 +13,13 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]
     private GameObject _menuUI, _inGameUI, _wimIU, _lostUI;
     [SerializeField]
-    private Text _scoreText;
+    private GameObject _textGood, _textAmazing;
+    [SerializeField]
+    private Text _scoreText, _scoreTextWin, _levelNamberLevel;
+
     private int _pointsNamber = 0, _scoreNamber = 0, _bonusPoint;
+    [SerializeField]
+    private float _timeLetteringPromotion;
 
     private void Awake()
     {
@@ -24,26 +29,45 @@ public class CanvasManager : MonoBehaviour
     }
     private void Start()
     {
-
         _scoreText.text = 0.ToString();
+
+        if (PlayerPrefs.GetInt("Level") <= 0)
+        {
+            PlayerPrefs.SetInt("Level", 1);
+        }
         if (!IsStartGeme)
         {
+            FacebookManager.Instance.GameStart();
             _menuUI.SetActive(true);
+        }
+        else
+        {
+            FacebookManager.Instance.LevelStart(PlayerPrefs.GetInt("Level"));
             IsGameFlow = true;
         }
     }
 
     private void Update()
     {
-        if (!_inGameUI.activeSelf && IsStartGeme)
+        if (!_inGameUI.activeSelf && IsStartGeme && IsGameFlow)
         {
             _menuUI.SetActive(false);
             _inGameUI.SetActive(true);
         }
         if (!_wimIU.activeSelf && IsWinGame)
         {
+            IsGameFlow = false;
+
+            _levelNamberLevel.text = "Level " + PlayerPrefs.GetInt("Level").ToString();
+            FacebookManager.Instance.LevelWin(PlayerPrefs.GetInt("Level"));
+
+            PlayerPrefs.SetInt("Stage", PlayerPrefs.GetInt("Stage") + 1);
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+
+            _scoreTextWin.text = _pointsNamber.ToString();
             _inGameUI.SetActive(false);
             _wimIU.SetActive(true);
+            FacebookManager.Instance.LevelWin(PlayerPrefs.GetInt("Level"));
         }
         if (!_lostUI.activeSelf && IsLoseGame)
         {
@@ -55,11 +79,21 @@ public class CanvasManager : MonoBehaviour
     {
         if (_pointsNamber > _scoreNamber)
         {
-            _scoreNamber+=5;
+            _scoreNamber += 5;
             _scoreText.text = _scoreNamber.ToString();
         }
     }
-    //SizeBillet ==( StartSize -currentSize) sizeBilletSuperfluous == currentSizes
+    private IEnumerator Incentive(bool Amazing)
+    {
+        _textAmazing.SetActive(false);
+        _textGood.SetActive(false);
+
+        GameObject incentive = Amazing ? _textAmazing : _textGood;
+
+        incentive.SetActive(true);
+        yield return new WaitForSeconds(_timeLetteringPromotion);
+        incentive.SetActive(false);
+    }
     public void AddPoint(float sizeBilletSuperfluous, float sizeBillet, bool noSawCut)
     {
         if (!noSawCut)
@@ -68,11 +102,15 @@ public class CanvasManager : MonoBehaviour
             {
                 _pointsNamber += LevelCharacteristicsManager.PerfectAddPoint + _bonusPoint;
                 _bonusPoint += LevelCharacteristicsManager.BonusPoints;
+
+                StartCoroutine(Incentive(true));
             }
             else if (sizeBilletSuperfluous < LevelCharacteristicsManager.Fine && sizeBillet < LevelCharacteristicsManager.Fine)
             {
                 _pointsNamber += LevelCharacteristicsManager.FineAddPoint;
                 _bonusPoint = 0;
+
+                StartCoroutine(Incentive(false));
             }
             else
             {

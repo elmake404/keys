@@ -9,12 +9,12 @@ public class KeyTeeth : MonoBehaviour
     [SerializeField]
     private Key _key;
 
-    public bool IsProcessingBillet 
+    public bool IsProcessingBillet
     { get { return _billet.IsProcessing || _billetSuperfluous.IsProcessing; } }
-    public void ProngParameters(float sizeBilletSuperfluous,float sizeTeeht)
+    public void ProngParameters(float sizeBilletSuperfluous, float sizeTeeht)
     {
         sizeTeeht = sizeTeeht <= 0 ? 1 : sizeTeeht;
-        float sizeBillet = ((_billetSuperfluous.transform.localScale.x + _billet.transform.localScale.x) - sizeBilletSuperfluous)*sizeTeeht;
+        float sizeBillet = ((_billetSuperfluous.transform.localScale.x + _billet.transform.localScale.x) - sizeBilletSuperfluous) * sizeTeeht;
         sizeBilletSuperfluous *= sizeTeeht;
         _billet.transform.localScale = new Vector3(sizeBillet, _billet.transform.localScale.y, _billet.transform.localScale.z);
         _billetSuperfluous.transform.localScale = new Vector3(sizeBilletSuperfluous, _billetSuperfluous.transform.localScale.y, _billetSuperfluous.transform.localScale.z);
@@ -28,7 +28,7 @@ public class KeyTeeth : MonoBehaviour
     public void DeactivationBillets()
     {
         CanvasManager.instanceСanvasManager.AddPoint
-            (_billetSuperfluous.transform.localScale.x, _billet.GetDistance(),_billetSuperfluous.GetDistance()==0); 
+            (_billetSuperfluous.transform.localScale.x, _billet.GetDistance(), NoSawCut());
         _billetSuperfluous.IsActivation = false;
         _billet.IsActivation = false;
 
@@ -37,7 +37,7 @@ public class KeyTeeth : MonoBehaviour
 
         Grindstone.Istance.StopSparks();
         //событие 
-            }
+    }
 
     public void Erased(Billet billet)
     {
@@ -53,5 +53,9 @@ public class KeyTeeth : MonoBehaviour
     public bool WastedAwaySuperfluous()
     {
         return _billetSuperfluous.transform.localScale.x <= 0;
+    }
+    public bool NoSawCut()
+    {
+        return _billetSuperfluous.GetDistance() == 0;
     }
 }

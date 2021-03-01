@@ -164,20 +164,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a82a83bec083f34287f18c9ee658703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _perfect: 0.075
+  _fine: 0.2
+  _perfectAddPoint: 100
+  _fineAddPoint: 75
+  _badlyAddPoint: 50
+  _bonusPoints: 50
   _levelKeyCharacteristics:
   - keyCharacteristics:
-    - NaberTeeht: 5
+    - ModelNamber: 0
+      NaberTeeht: 5
       SizeTeeth: 1
-    - NaberTeeht: 3
+    - ModelNamber: 0
+      NaberTeeht: 3
       SizeTeeth: 0.8
-    - NaberTeeht: 2
+    - ModelNamber: 0
+      NaberTeeht: 2
       SizeTeeth: 0.1
-  - keyCharacteristics: []
-  - keyCharacteristics: []
-  - keyCharacteristics: []
-  - keyCharacteristics: []
-  - keyCharacteristics: []
-  - keyCharacteristics: []
+  - keyCharacteristics:
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+--- !u!1 &1387925713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1387925715}
+  - component: {fileID: 1387925714}
+  m_Layer: 0
+  m_Name: FBSDK
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1387925714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387925713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38cdebada7d61004aad1c6a856b2a320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1387925715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387925713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 198.5, y: 353, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1934279534
 GameObject:
   m_ObjectHideFlags: 0
