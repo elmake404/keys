@@ -237,6 +237,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114293488689489806, guid: 0a5977a41716af548a57df5683b8ff56,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114293488689489806, guid: 0a5977a41716af548a57df5683b8ff56,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 114293488689489806, guid: 0a5977a41716af548a57df5683b8ff56,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114293488689489806, guid: 0a5977a41716af548a57df5683b8ff56,
+        type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224686921106952662, guid: 0a5977a41716af548a57df5683b8ff56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -552,9 +572,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _keyPrefab: {fileID: 4629432331863747995, guid: 944ff55bab69e3f4e83ed353f684b065,
     type: 3}
-  _speedTransitionAnotherLink: 0.1
+  _speedTransitionAnotherLink: 0.2
   _speedTransitionAnotherKey: 0.5
-  _distanceBetweenKeys: 23
+  _distanceBetweenKeys: 20
 --- !u!4 &1525933972
 Transform:
   m_ObjectHideFlags: 0
@@ -586,7 +606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &1728165744
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5316,13 +5336,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728165743}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.69952905, y: 0.10324319, z: 0.10324319, w: 0.69952905}
+  m_LocalPosition: {x: 0.72, y: 1.97, z: 1.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 106.790985, y: -90, z: -90}
 --- !u!1 &1967902088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5401,6 +5421,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grindstone
       objectReference: {fileID: 0}
+    - target: {fileID: 4299691902366780026, guid: bdf4b648952c8574a880e23f7e0f8a56,
+        type: 3}
+      propertyPath: _sparksPS
+      value: 
+      objectReference: {fileID: 1728165745}
     - target: {fileID: 4299691902366780029, guid: bdf4b648952c8574a880e23f7e0f8a56,
         type: 3}
       propertyPath: m_LocalPosition.x
