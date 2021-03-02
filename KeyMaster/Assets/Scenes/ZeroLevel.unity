@@ -173,14 +173,76 @@ MonoBehaviour:
   _levelKeyCharacteristics:
   - keyCharacteristics:
     - ModelNamber: 0
-      NaberTeeht: 5
+      NaberTeeht: 3
+      SizeTeeth: 0.5
+  - keyCharacteristics:
+    - ModelNamber: 1
+      NaberTeeht: 3
+      SizeTeeth: 0.5
+    - ModelNamber: 2
+      NaberTeeht: 3
+      SizeTeeth: 0.5
+  - keyCharacteristics:
+    - ModelNamber: 2
+      NaberTeeht: 6
       SizeTeeth: 1
-    - ModelNamber: 0
+  - keyCharacteristics:
+    - ModelNamber: 3
+      NaberTeeht: 4
+      SizeTeeth: 0.6
+    - ModelNamber: 4
+      NaberTeeht: 4
+      SizeTeeth: 0.6
+  - keyCharacteristics:
+    - ModelNamber: 2
       NaberTeeht: 3
       SizeTeeth: 0.8
+    - ModelNamber: 3
+      NaberTeeht: 3
+      SizeTeeth: 0.7
+    - ModelNamber: 1
+      NaberTeeht: 3
+      SizeTeeth: 0.9
+  - keyCharacteristics:
     - ModelNamber: 0
-      NaberTeeht: 2
-      SizeTeeth: 0.1
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+  - keyCharacteristics:
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+  - keyCharacteristics:
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+  - keyCharacteristics:
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
+    - ModelNamber: 0
+      NaberTeeht: 0
+      SizeTeeth: 0
   - keyCharacteristics:
     - ModelNamber: 0
       NaberTeeht: 0
