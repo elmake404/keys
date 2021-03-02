@@ -18,7 +18,7 @@ public class Key : MonoBehaviour
     [Range(0, 0.9f)]
     private float _minDifferenceBetweenTeeth;
     private int _numberLink = 0;
-    private bool _isKeyInPosition, _nextKey, _isReady;
+    private bool _isKeyInPosition, _nextKey, _isReady = CanvasManager.IsStartGeme;
 
     private void Update()
     {

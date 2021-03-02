@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 114628866344963822}
   - component: {fileID: 114085103480830806}
   - component: {fileID: 6599629704463688839}
+  - component: {fileID: 8688736910316234294}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -894,6 +895,18 @@ MonoBehaviour:
   _scoreTextWin: {fileID: 114328863915241926}
   _levelNamberLevel: {fileID: 114571137488477882}
   _timeLetteringPromotion: 1
+--- !u!114 &8688736910316234294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155838776360770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995057433fc383e4191028bc1ec73b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1168849908791638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,6 +1808,7 @@ GameObject:
   - component: {fileID: 224122912994055248}
   - component: {fileID: 222073396449890134}
   - component: {fileID: 114079143025664714}
+  - component: {fileID: 1903699337217631768}
   m_Layer: 5
   m_Name: WinUI
   m_TagString: Untagged
@@ -1861,6 +1875,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1903699337217631768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326874676435430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae39620722622ff43b86963839df1458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1334389028630384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,6 +2478,7 @@ GameObject:
   - component: {fileID: 224358153135785456}
   - component: {fileID: 222574322450402594}
   - component: {fileID: 114357530374569584}
+  - component: {fileID: 4328158395522969559}
   m_Layer: 5
   m_Name: LostUI
   m_TagString: Untagged
@@ -2518,6 +2545,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4328158395522969559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401342752598832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae39620722622ff43b86963839df1458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1414646230702184
 GameObject:
   m_ObjectHideFlags: 0
@@ -4713,7 +4752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &224353578050052204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5212,7 +5251,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114534916538485146}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8688736910316234294}
+        m_MethodName: RestartBottom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1814002960550018
 GameObject:
   m_ObjectHideFlags: 0
