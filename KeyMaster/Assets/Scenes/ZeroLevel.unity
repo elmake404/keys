@@ -167,8 +167,8 @@ MonoBehaviour:
   _perfect: 0.075
   _fine: 0.2
   _perfectAddPoint: 100
-  _fineAddPoint: 75
-  _badlyAddPoint: 50
+  _fineAddPoint: 50
+  _badlyAddPoint: 0
   _bonusPoints: 50
   _levelKeyCharacteristics:
   - keyCharacteristics:

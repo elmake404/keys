@@ -553,8 +553,8 @@ MonoBehaviour:
   _keyPrefab: {fileID: 4629432331863747995, guid: 944ff55bab69e3f4e83ed353f684b065,
     type: 3}
   _speedTransitionAnotherLink: 0.1
-  _speedTransitionAnotherKey: 0.5
-  _distanceBetweenKeys: 23
+  _speedTransitionAnotherKey: 0.3
+  _distanceBetweenKeys: 20
 --- !u!4 &1525933972
 Transform:
   m_ObjectHideFlags: 0

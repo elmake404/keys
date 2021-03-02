@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sparksPS: {fileID: 3662219977481935306}
   _grindstoneMesh: {fileID: 5036662340311422310}
-  _speedRotation: -2
+  _speedRotation: 2
 --- !u!1 &5862777998745677821
 GameObject:
   m_ObjectHideFlags: 0
