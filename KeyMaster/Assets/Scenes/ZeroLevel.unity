@@ -204,25 +204,25 @@ MonoBehaviour:
       NaberTeeht: 3
       SizeTeeth: 0.9
   - keyCharacteristics:
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
+    - ModelNamber: 2
+      NaberTeeht: 4
+      SizeTeeth: 0.881
+    - ModelNamber: 3
+      NaberTeeht: 3
+      SizeTeeth: 0.911
+    - ModelNamber: 5
+      NaberTeeht: 3
+      SizeTeeth: 0.963
   - keyCharacteristics:
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
+    - ModelNamber: 2
+      NaberTeeht: 4
+      SizeTeeth: 0.958
+    - ModelNamber: 5
+      NaberTeeht: 4
+      SizeTeeth: 0.939
+    - ModelNamber: 4
+      NaberTeeht: 4
+      SizeTeeth: 0.975
   - keyCharacteristics:
     - ModelNamber: 0
       NaberTeeht: 0
