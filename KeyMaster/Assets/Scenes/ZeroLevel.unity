@@ -173,8 +173,8 @@ MonoBehaviour:
   _levelKeyCharacteristics:
   - keyCharacteristics:
     - ModelNamber: 0
-      NaberTeeht: 3
-      SizeTeeth: 0.5
+      NaberTeeht: 4
+      SizeTeeth: 1
   - keyCharacteristics:
     - ModelNamber: 1
       NaberTeeht: 3
@@ -234,25 +234,28 @@ MonoBehaviour:
       NaberTeeht: 0
       SizeTeeth: 0
   - keyCharacteristics:
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
+    - ModelNamber: 1
+      NaberTeeht: 4
+      SizeTeeth: 0.92
+    - ModelNamber: 2
+      NaberTeeht: 5
+      SizeTeeth: 0.81
+    - ModelNamber: 3
+      NaberTeeht: 4
+      SizeTeeth: 0.878
   - keyCharacteristics:
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
+    - ModelNamber: 2
+      NaberTeeht: 3
+      SizeTeeth: 0.889
+    - ModelNamber: 3
+      NaberTeeht: 4
+      SizeTeeth: 0.936
+    - ModelNamber: 1
+      NaberTeeht: 4
+      SizeTeeth: 0.915
+    - ModelNamber: 2
+      NaberTeeht: 3
+      SizeTeeth: 0.915
 --- !u!1 &1387925713
 GameObject:
   m_ObjectHideFlags: 0
