@@ -9,6 +9,8 @@ public class Billet : MonoBehaviour
     private Transform _meshBillet;
     [SerializeField]
     private KeyTeeth _keyTeeth;
+    [SerializeField]
+    ParticleSystem _hotMetal;
     private float _scaleMeshBillet
     { get { return _meshBillet.localScale.x * transform.localScale.x; } }
     private float _startScale;
@@ -29,9 +31,7 @@ public class Billet : MonoBehaviour
             {
                 if (!IsProcessing)
                 {
-                    IsProcessing = true;
-                    _grindstone.PlaySparks();
-
+                    ActivationEffect();
                 }
                 Sharpen(cutSize);
             }
@@ -39,8 +39,7 @@ public class Billet : MonoBehaviour
             {
                 if (IsProcessing)
                 {
-                    _grindstone.StopSparks();
-                    IsProcessing = false;
+                    DeactivationEffect();
                 }
             }
         }
@@ -61,6 +60,19 @@ public class Billet : MonoBehaviour
 
             _keyTeeth.Erased(this);
         }
+    }
+    private void ActivationEffect()
+    {
+        IsProcessing = true;
+        _grindstone.PlaySparks();
+        _hotMetal.Play();
+    }
+    public void DeactivationEffect()
+    {
+        _grindstone.StopSparks();
+        IsProcessing = false;
+        _hotMetal.Stop();
+
     }
     public float GetDistance()
     {

@@ -34,8 +34,10 @@ public class KeyTeeth : MonoBehaviour
 
         _billetSuperfluous.IsProcessing = false;
         _billet.IsProcessing = false;
+        _billetSuperfluous.DeactivationEffect();
+        _billet.DeactivationEffect();
 
-        Grindstone.Istance.StopSparks();
+        //Grindstone.Istance.StopSparks();
         //событие 
     }
 

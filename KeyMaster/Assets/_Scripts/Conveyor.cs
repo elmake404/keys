@@ -100,6 +100,7 @@ public class Conveyor : MonoBehaviour
         _keys = new Key[_quantityKeys.Length];
 
         Vector3 spawnPosition = transform.position;
+        spawnPosition.z += _distanceBetweenKeys;
 
         for (int i = 0; i < _keys.Length; i++)
         {
@@ -108,9 +109,32 @@ public class Conveyor : MonoBehaviour
             _keys[i].transform.SetParent(transform);
             spawnPosition.z += _distanceBetweenKeys;
         }
+        //_keys[0].ActivationKey();
+
+        transform.position = new Vector3(transform.position.x, Grindstone.Istance.transform.position.y, transform.position.z);
+        StartCoroutine(GoTuStart());
+    }
+    private IEnumerator GoTuStart()
+    {
+        Vector3 PosLink = transform.position;
+
+        while (true)
+        {
+            PosLink.z = LocaLinkPosition().z;
+
+            transform.position = Vector3.MoveTowards(transform.position, PosLink, _speedTransitionAnotherKey);
+
+            if (Mathf.Abs(transform.position.z - LocaLinkPosition().z) < 0.01)
+            {
+                _isNewKey = false;
+
+                break;
+            }
+            yield return new WaitForSeconds(0.02f);
+        }
         _keys[0].ActivationKey();
 
-        transform.position = new Vector3(transform.position.x, Grindstone.Istance.transform.position.y, LocaLinkPosition().z);
+
     }
     public void WorkpieceChange()
     {
