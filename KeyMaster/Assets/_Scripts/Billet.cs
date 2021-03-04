@@ -9,8 +9,7 @@ public class Billet : MonoBehaviour
     private Transform _meshBillet;
     [SerializeField]
     private KeyTeeth _keyTeeth;
-    [SerializeField]
-    ParticleSystem _hotMetal;
+
     private float _scaleMeshBillet
     { get { return _meshBillet.localScale.x * transform.localScale.x; } }
     private float _startScale;
@@ -65,14 +64,11 @@ public class Billet : MonoBehaviour
     {
         IsProcessing = true;
         _grindstone.PlaySparks();
-        _hotMetal.Play();
     }
     public void DeactivationEffect()
     {
         _grindstone.StopSparks();
         IsProcessing = false;
-        _hotMetal.Stop();
-
     }
     public float GetDistance()
     {

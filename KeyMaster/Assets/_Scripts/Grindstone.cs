@@ -7,7 +7,7 @@ public class Grindstone : MonoBehaviour
     public static Grindstone Istance;
 
     [SerializeField]
-    private ParticleSystem _sparksPS;
+    private ParticleSystem _sparksPS, _heatedMetal;
     [SerializeField]
     private Transform _grindstoneMesh;
 
@@ -34,10 +34,12 @@ public class Grindstone : MonoBehaviour
     public void PlaySparks()
     {
         _sparksPS.Play();
+        _heatedMetal.Play();
     }
     public void StopSparks()
     {
         _sparksPS.Stop();
+        _heatedMetal.Stop();
     }
     public bool RegionGrindstone(float PositionX, out float sawCutSize)
     {
