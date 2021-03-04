@@ -889,11 +889,11 @@ MonoBehaviour:
   _inGameUI: {fileID: 1777170646809218}
   _wimIU: {fileID: 1326874676435430}
   _lostUI: {fileID: 1401342752598832}
-  _textGood: {fileID: 4368559589392886871}
-  _textAmazing: {fileID: 5746882691765882121}
   _scoreText: {fileID: 114293488689489806}
   _scoreTextWin: {fileID: 114328863915241926}
   _levelNamberLevel: {fileID: 114571137488477882}
+  _textGood: {fileID: 2631823778980792544}
+  _textAmazing: {fileID: 7401815442180434880}
   _timeLetteringPromotion: 1
 --- !u!114 &8688736910316234294
 MonoBehaviour:

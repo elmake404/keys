@@ -13,9 +13,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]
     private GameObject _menuUI, _inGameUI, _wimIU, _lostUI;
     [SerializeField]
-    private GameObject _textGood, _textAmazing;
-    [SerializeField]
-    private Text _scoreText, _scoreTextWin, _levelNamberLevel;
+    private Text _scoreText, _scoreTextWin, _levelNamberLevel,_textGood, _textAmazing;
 
     private int _pointsNamber = 0, _scoreNamber = 0, _bonusPoint;
     [SerializeField]
@@ -85,10 +83,10 @@ public class CanvasManager : MonoBehaviour
     }
     private IEnumerator Incentive(bool Amazing)
     {
-        _textAmazing.SetActive(false);
-        _textGood.SetActive(false);
+        _textAmazing.gameObject.SetActive(false);
+        _textGood.gameObject.SetActive(false);
 
-        GameObject incentive = Amazing ? _textAmazing : _textGood;
+        GameObject incentive = Amazing ? _textAmazing.gameObject : _textGood.gameObject;
 
         incentive.SetActive(true);
         yield return new WaitForSeconds(_timeLetteringPromotion);
@@ -102,7 +100,7 @@ public class CanvasManager : MonoBehaviour
             {
                 _pointsNamber += LevelCharacteristicsManager.PerfectAddPoint + _bonusPoint;
                 _bonusPoint += LevelCharacteristicsManager.BonusPoints;
-
+                _textAmazing.text = "Amazing! \r\n Score +" + _bonusPoint;
                 StartCoroutine(Incentive(true));
             }
             else if (sizeBilletSuperfluous < LevelCharacteristicsManager.Fine && sizeBillet < LevelCharacteristicsManager.Fine)
