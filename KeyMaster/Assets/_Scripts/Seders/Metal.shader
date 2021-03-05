@@ -1,54 +1,85 @@
-﻿Shader "Custom/Metal"
+﻿// Upgrade NOTE: upgraded instancing buffer 'Props' to new syntax.
+
+Shader "Custom/Metal"
 {
-    Properties
-    {
-        _Color ("Color", Color) = (1,1,1,1)
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Glossiness ("Smoothness", Range(0,1)) = 0.5
-        _Metallic ("Metallic", Range(0,1)) = 0.0
+    Properties{
+
+        _Color("Color", Color) = (1,1,1,1)
+        _MainTex("Base Color", 2D) = "white" {}
+        _UVs("UV Scale", float) = 1.0
+
     }
-    SubShader
-    {
-        Tags { "RenderType"="Opaque" }
-        LOD 200
 
-        CGPROGRAM
-        // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows
+        SubShader{
+            Tags { "RenderType" = "Opaque" }
+            LOD 300
 
-        // Use shader model 3.0 target, to get nicer looking lighting
-        #pragma target 3.0
-        #include "UnityCG.cginc"
+            CGPROGRAM
+            // Physically based Standard lighting model, and enable shadows on all light types
+            #pragma surface surf StandardSpecular fullforwardshadows vertex:vert
 
-        sampler2D _MainTex;
+            // Use shader model 3.0 target, to get nicer looking lighting
+            #pragma target 3.0
 
-        struct Input
-        {
-            float2 uv_MainTex;
-        };
+            #include "UnityCG.cginc"
 
-        half _Glossiness;
-        half _Metallic;
-        fixed4 _Color;
+            sampler2D _MainTex;
+            fixed4 _Color;
+            float _UVs;
+            //        float3 worldPos;
+            //        float3 worldNormal;
 
-        // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
-        // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
-        // #pragma instancing_options assumeuniformscaling
-        UNITY_INSTANCING_BUFFER_START(Props)
-            // put more per-instance properties here
-        UNITY_INSTANCING_BUFFER_END(Props)
+                    struct Input {
 
-        void surf (Input IN, inout SurfaceOutputStandard o)
-        {
-            // Albedo comes from a texture tinted by color
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-            o.Albedo = c.rgb;
-            // Metallic and smoothness come from slider variables
-            o.Metallic = _Metallic;
-            o.Smoothness = _Glossiness;
-            o.Alpha = c.a;
+                            float2 uv_MainTex;
+                            float3 worldPos;
+                            float3 worldNormal;
+
+                    };
+
+
+                    //---- World Position Alignment Test ----
+
+                    void vert(inout appdata_full v) {
+
+                        //Texture Coordinates rotation and rescale
+
+
+                         }
+
+
+                         UNITY_INSTANCING_BUFFER_START(Props)
+                         UNITY_INSTANCING_BUFFER_END(Props)
+
+                         void surf(Input IN, inout SurfaceOutputStandardSpecular o) {
+
+
+                             //---- World Space (Aligned) Evaluation Here -----
+
+                                 float3 Pos = IN.worldPos / (-1.0 * abs(_UVs));
+
+                                 float3 c00 = tex2D(_MainTex, IN.worldPos / 10);
+
+                                 float3 c1 = tex2D(_MainTex, Pos.yz).rgb;
+                                 float3 c2 = tex2D(_MainTex, Pos.xz).rgb;
+                                 float3 c3 = tex2D(_MainTex, Pos.xy).rgb;
+
+                                 float alpha21 = abs(IN.worldNormal.x);
+                                 float alpha23 = abs(IN.worldNormal.z);
+
+                                 float3 c21 = lerp(c2, c1, alpha21).rgb;
+                                 float3 c23 = lerp(c21, c3, alpha23).rgb;
+
+                                 //---- Base Color Adjustment -----
+
+                                 fixed3 c = c23 * _Color;
+                                 o.Albedo = c23;
+
+
+                             }
+                             ENDCG
         }
-        ENDCG
-    }
-    FallBack "Diffuse"
+            FallBack "Diffuse"
 }
+ 
+ 

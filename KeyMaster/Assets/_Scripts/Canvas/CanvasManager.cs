@@ -21,6 +21,8 @@ public class CanvasManager : MonoBehaviour
 
     private void Awake()
     {
+        _textAmazing.text = "Amazing! \r\n Score +" + _bonusPoint;
+
         instanceСanvasManager = this;
         IsWinGame = false;
         IsLoseGame = false;
@@ -49,7 +51,7 @@ public class CanvasManager : MonoBehaviour
     {
         if (!_inGameUI.activeSelf && IsStartGeme && IsGameFlow)
         {
-            _menuUI.SetActive(false);
+            //_menuUI.SetActive(false);
             _inGameUI.SetActive(true);
         }
         if (!_wimIU.activeSelf && IsWinGame)
