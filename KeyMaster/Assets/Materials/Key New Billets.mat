@@ -41,11 +41,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 0.15, y: 0.15}
+        m_Scale: {x: 0, y: 0.15}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 0.15, y: 0.15}
+        m_Scale: {x: 0, y: 0.15}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -67,7 +67,7 @@ Material:
     - ScaleX: 1
     - ScaleY: 1
     - _AOFactor: 1
-    - _BumpScale: 2
+    - _BumpScale: 0.5
     - _CurveFactor: 1
     - _CurveFactorLongitudual: 0.03
     - _CurveFactorTangential: 0.03

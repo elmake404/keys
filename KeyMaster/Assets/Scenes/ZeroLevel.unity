@@ -172,18 +172,18 @@ MonoBehaviour:
   _bonusPoints: 50
   _levelKeyCharacteristics:
   - keyCharacteristics:
-    - ModelNamber: 0
+    - ModelNamber: 3
       NaberTeeht: 4
       SizeTeeth: 1
   - keyCharacteristics:
     - ModelNamber: 1
       NaberTeeht: 3
       SizeTeeth: 0.5
-    - ModelNamber: 2
+    - ModelNamber: 4
       NaberTeeht: 3
       SizeTeeth: 0.5
   - keyCharacteristics:
-    - ModelNamber: 2
+    - ModelNamber: 5
       NaberTeeht: 6
       SizeTeeth: 1
   - keyCharacteristics:
@@ -224,14 +224,11 @@ MonoBehaviour:
       NaberTeeht: 4
       SizeTeeth: 0.975
   - keyCharacteristics:
-    - ModelNamber: 0
-      NaberTeeht: 0
+    - ModelNamber: 1
+      NaberTeeht: 6
       SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
-      SizeTeeth: 0
-    - ModelNamber: 0
-      NaberTeeht: 0
+    - ModelNamber: 3
+      NaberTeeht: 6
       SizeTeeth: 0
   - keyCharacteristics:
     - ModelNamber: 1
@@ -249,7 +246,7 @@ MonoBehaviour:
       SizeTeeth: 0.889
     - ModelNamber: 3
       NaberTeeht: 4
-      SizeTeeth: 0.936
+      SizeTeeth: 0.566
     - ModelNamber: 1
       NaberTeeht: 4
       SizeTeeth: 0.915
