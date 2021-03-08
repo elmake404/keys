@@ -16,13 +16,9 @@ public class CanvasManager : MonoBehaviour
     private Text _scoreText, _scoreTextWin, _levelNamberLevel,_textGood, _textAmazing;
 
     private int _pointsNamber = 0, _scoreNamber = 0, _bonusPoint;
-    [SerializeField]
-    private float _timeLetteringPromotion;
 
     private void Awake()
     {
-        _textAmazing.text = "Amazing! \r\n Score +" + _bonusPoint;
-
         instanceСanvasManager = this;
         IsWinGame = false;
         IsLoseGame = false;
@@ -83,17 +79,6 @@ public class CanvasManager : MonoBehaviour
             _scoreText.text = _scoreNamber.ToString();
         }
     }
-    private IEnumerator Incentive(bool Amazing)
-    {
-        _textAmazing.gameObject.SetActive(false);
-        _textGood.gameObject.SetActive(false);
-
-        GameObject incentive = Amazing ? _textAmazing.gameObject : _textGood.gameObject;
-
-        incentive.SetActive(true);
-        yield return new WaitForSeconds(_timeLetteringPromotion);
-        incentive.SetActive(false);
-    }
     public void AddPoint(float sizeBilletSuperfluous, float sizeBillet, bool noSawCut)
     {
         if (!noSawCut)
@@ -103,14 +88,13 @@ public class CanvasManager : MonoBehaviour
                 _pointsNamber += LevelCharacteristicsManager.PerfectAddPoint + _bonusPoint;
                 _bonusPoint += LevelCharacteristicsManager.BonusPoints;
                 _textAmazing.text = "Amazing! \r\n Score +" + _bonusPoint;
-                StartCoroutine(Incentive(true));
+                _textAmazing.gameObject.SetActive(true);
             }
             else if (sizeBilletSuperfluous < LevelCharacteristicsManager.Fine && sizeBillet < LevelCharacteristicsManager.Fine)
             {
                 _pointsNamber += LevelCharacteristicsManager.FineAddPoint;
                 _bonusPoint = 0;
-
-                StartCoroutine(Incentive(false));
+                _textGood.gameObject.SetActive(true);
             }
             else
             {

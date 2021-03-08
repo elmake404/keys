@@ -894,7 +894,6 @@ MonoBehaviour:
   _levelNamberLevel: {fileID: 114571137488477882}
   _textGood: {fileID: 2631823778980792544}
   _textAmazing: {fileID: 7401815442180434880}
-  _timeLetteringPromotion: 1
 --- !u!114 &8688736910316234294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2929,7 +2928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6335,6 +6334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8367158413792876905}
   - component: {fileID: 3816945545397473308}
+  - component: {fileID: 3256963908632430136}
   - component: {fileID: 2631823778980792544}
   - component: {fileID: 8084242209220922433}
   - component: {fileID: 1906699260276675415}
@@ -6372,6 +6372,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4368559589392886871}
   m_CullTransparentMesh: 0
+--- !u!114 &3256963908632430136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368559589392886871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601c66c870794684b90108b33f68fef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeLetteringPromotion: 0.5
 --- !u!114 &2631823778980792544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6386,7 +6399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6413,7 +6426,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4368559589392886871}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fe315f2bbc1360340b343fc9a9b118e6, type: 2}
   m_CullingMode: 0
@@ -6449,6 +6462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4866079060107401330}
   - component: {fileID: 7320337981968644770}
+  - component: {fileID: 7596625789667974392}
   - component: {fileID: 7401815442180434880}
   - component: {fileID: 2441274226205699149}
   - component: {fileID: 5734893877411950488}
@@ -6486,6 +6500,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5746882691765882121}
   m_CullTransparentMesh: 0
+--- !u!114 &7596625789667974392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746882691765882121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601c66c870794684b90108b33f68fef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeLetteringPromotion: 0.5
 --- !u!114 &7401815442180434880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6500,7 +6527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6529,7 +6556,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5746882691765882121}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fe315f2bbc1360340b343fc9a9b118e6, type: 2}
   m_CullingMode: 0

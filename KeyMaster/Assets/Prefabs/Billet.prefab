@@ -46,7 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meshBillet: {fileID: 3238424097408209366}
   _keyTeeth: {fileID: 1721524267094335499}
-  _hotMetal: {fileID: 0}
   IsActivation: 0
   IsProcessing: 0
 --- !u!1 &701094581056382864
@@ -108,7 +107,6 @@ GameObject:
   - component: {fileID: 3238424097408209366}
   - component: {fileID: 3427651757582263660}
   - component: {fileID: 370496758119968462}
-  - component: {fileID: 6823602634139452805}
   m_Layer: 0
   m_Name: MeshBillet
   m_TagString: Untagged
@@ -177,19 +175,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6823602634139452805
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2250914136232743491}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8073894506024447231
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +221,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _meshBillet: {fileID: 4452689544995720297}
   _keyTeeth: {fileID: 1721524267094335499}
-  _hotMetal: {fileID: 0}
   IsActivation: 0
   IsProcessing: 0
 --- !u!1 &8309710110908359168
@@ -250,7 +234,6 @@ GameObject:
   - component: {fileID: 4452689544995720297}
   - component: {fileID: 2525149020466396644}
   - component: {fileID: 2733864277479116864}
-  - component: {fileID: 1817698974729888072}
   m_Layer: 0
   m_Name: MeshBilletSuperfluous
   m_TagString: Untagged
@@ -319,16 +302,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1817698974729888072
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8309710110908359168}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

@@ -68,7 +68,7 @@ public class Conveyor : MonoBehaviour
         }
         else
         {
-
+            _keys[_namberKey].DeactivationTeeth();
             while (!_keys[_namberKey].KeyAtStartPosition())
             {
                 _keys[_namberKey].MoveToStart(_speedTransitionAnotherLink);
@@ -76,6 +76,8 @@ public class Conveyor : MonoBehaviour
                 yield return new WaitForSeconds(0.02f);
             }
             _isNewKey = false;
+            _keys[_namberKey].ActivationTeeth();
+
         }
     }
 

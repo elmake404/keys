@@ -128,6 +128,14 @@ public class Key : MonoBehaviour
             _nextKey = true;
         }
     }
+    public void DeactivationTeeth()
+    {
+        _isKeyInPosition = false;
+    }
+    public void ActivationTeeth()
+    {
+        _isKeyInPosition = true;
+    }
     public void ActivationNewTeeth()
     {
         _isKeyInPosition = true;
